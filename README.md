@@ -1,6 +1,4 @@
-# play-framework-scala-seed
-
-![](https://playframework.com/assets/images/logos/play_full_color.png)
+# Dont Touch Me server created from play-framework-scala-seed
 
 ## Development
 
@@ -31,13 +29,3 @@ However, if you just want to complie the application to be in place execute:
     ./scripts/production.sh
 
 You will find the packaged application in `./target/universal/stage directory`. In this folder you can run `./bin/scala-dci` script that runs the application.
-
-## Deployment
-
-If you want to have the application deployed to Heroku you can use the following button:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-To deploy the application anytime later run:
-
-    ./scripts/deploy.sh
