@@ -15,5 +15,5 @@ libraryDependencies ++= Seq(
   "javax.inject" % "javax.inject" % "1"
 )
 
-routesGenerator := InjectedRoutesGenerator
+//routesGenerator := InjectedRoutesGenerator
 

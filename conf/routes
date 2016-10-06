@@ -1,2 +1,3 @@
 
-POST /events/add        controllers.EventController.create(id: Int, pkgName: String, eventType: Int, timeTag: Double)
+POST /events/addJson                                    controllers.EventController.createFromJson()
+#POST /events/add/:id/:pkgName/:eventType/:timeTag       controllers.EventController.create(id: Int, pkgName: String, eventType: Int, timeTag: Double)

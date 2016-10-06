@@ -9,11 +9,10 @@ import javax.inject.Inject
 import scala.concurrent.Future
 import scala.concurrent._
 import ExecutionContext.Implicits.global
-
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 import play.api.Logger
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.{Action, BodyParser, BodyParsers, Controller}
 import play.modules.reactivemongo._
 import play.modules.reactivemongo.json._
 import reactivemongo.play.json.collection.JSONCollection
@@ -37,6 +36,7 @@ class EventController @Inject() (val reactiveMongoApi: ReactiveMongoApi)
   }
 
   def createFromJson = Action.async(parse.json) { request =>
+    Logger.info(s"HOLA AMIJO")
     import play.api.libs.json.Reads._
     /*
      * request.body is a JsValue.
@@ -56,6 +56,8 @@ class EventController @Inject() (val reactiveMongoApi: ReactiveMongoApi)
         Logger.debug(s"Successfully inserted with LastError: $lastError")
         Created
       }
-    }.getOrElse(Future.successful(BadRequest("invalid json")))
+    }.getOrElse{
+      Logger.info(s"OLEOLEOLE")
+      Future.successful(BadRequest("OLEOLEOLE invalid json")) }
   }
 }
